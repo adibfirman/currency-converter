@@ -1,18 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  View, TouchableHighlight, Text
+  View, TouchableHighlight, Text, TextInput
 } from 'react-native'
 
 import styles from './styles'
 
 const InputWithButton = ({ onPress, buttonText, editable = true }) => (
-  <View>
+  <View style={styles.container}>
     <TouchableHighlight
       onPress={onPress}
+      style={styles.btnContainer}
     >
-      <Text>{buttonText}</Text>
+      <Text style={styles.btnText}>{buttonText}</Text>
     </TouchableHighlight>
+    <View style={styles.border} />
+    <TextInput style={styles.input} />
   </View>
 )
 

@@ -17,7 +17,7 @@ export default EStyleSheet.create({
     width: imgWidth / 2
   },
   text: {
-    color: '#fff',
+    color: '$white',
     fontSize: 28,
     letterSpacing: -0.5,
     marginTop: 15,
