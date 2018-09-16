@@ -7,8 +7,8 @@ import { InputWithButton } from '../components/TextInput'
 
 const TEMP_BASE_CURRENCY = 'USD'
 const TEMP_QUOTE_CURRENCY = 'GBP'
-const TEMP_BASE_PRICE = 100
-const TEMP_QUOTE_PRICE = 70.1
+const TEMP_BASE_PRICE = '100'
+const TEMP_QUOTE_PRICE = '70.1'
 
 class Home extends Component {
 
@@ -20,6 +20,10 @@ class Home extends Component {
     console.log('onPressQuoteCurrency')
   }
 
+  changeTextCurrency = text => {
+    console.log('change text', text)
+  }
+
   render () {
     return (
       <Container>
@@ -29,10 +33,15 @@ class Home extends Component {
         <Logo/>
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
-          onPress={this.onPressBaseCurrency} />
+          onPress={this.onPressBaseCurrency}
+          defaultValue={TEMP_BASE_PRICE}
+          keyboardType="numeric"
+          onChangeText={this.changeTextCurrency} />
         <InputWithButton
           buttonText={TEMP_QUOTE_CURRENCY}
-          onPress={this.onPressQuoteCurrency} />
+          onPress={this.onPressQuoteCurrency}
+          editable={false}
+          defaultValue={TEMP_QUOTE_PRICE} />
       </Container>
     )
   }

@@ -5,6 +5,8 @@ const INPUT_HEIGHT = 48
 const BORDER_RADIUS = 5
 
 export default EStyleSheet.create({
+  $btnBackgroundColorBase: '$white',
+  $btnBackgroundColorOpacity: 0.1,
   container: {
     backgroundColor: '$white',
     width: '90%',
@@ -13,6 +15,9 @@ export default EStyleSheet.create({
     alignItems: 'center',
     marginVertical: 11,
     borderRadius: BORDER_RADIUS
+  },
+  containerDisabled: {
+    backgroundColor: '$lightGray'
   },
   btnContainer: {
     height: INPUT_HEIGHT,
