@@ -6,7 +6,7 @@ import { Logo } from '../components/Logo'
 import { InputWithButton } from '../components/TextInput'
 import { TransparentButton } from '../components/Buttons'
 import { LastConverted } from '../components/Text'
-
+import { Header } from '../components/Header'
 
 const TEMP_BASE_CURRENCY = 'USD'
 const TEMP_QUOTE_CURRENCY = 'GBP'
@@ -33,13 +33,18 @@ class Home extends Component {
     console.log('swapReverseCurrency')
   }
 
+  handlePressHeader = () => {
+    console.log('gear header pressed')
+  }
+
   render () {
     return (
       <Container>
         <StatusBar
           translucent={true}
           barStyle="light-content" />
-        <Logo/>
+        <Header onPress={this.handlePressHeader} />
+        <Logo />
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
           onPress={this.onPressBaseCurrency}
