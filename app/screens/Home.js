@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native'
+import { StatusBar, KeyboardAvoidingView } from 'react-native'
 
 import { Container } from '../components/Container'
 import { Logo } from '../components/Logo'
@@ -44,26 +44,28 @@ class Home extends Component {
           translucent={true}
           barStyle="light-content" />
         <Header onPress={this.handlePressHeader} />
-        <Logo />
-        <InputWithButton
-          buttonText={TEMP_BASE_CURRENCY}
-          onPress={this.onPressBaseCurrency}
-          defaultValue={TEMP_BASE_PRICE}
-          keyboardType="numeric"
-          onChangeText={this.changeTextCurrency} />
-        <InputWithButton
-          buttonText={TEMP_QUOTE_CURRENCY}
-          onPress={this.onPressQuoteCurrency}
-          editable={false}
-          defaultValue={TEMP_QUOTE_PRICE} />
-        <LastConverted
-          base={TEMP_BASE_CURRENCY}
-          quote={TEMP_QUOTE_CURRENCY}
-          date={TEMP_CONVERTION_DATE}
-          convertionRate={TEMP_CONVERTION_RATE} />
-        <TransparentButton
-          onPress={this.swapReverseCurrency}
-          text="Reverse Currencies" />
+        <KeyboardAvoidingView behavior="padding">
+          <Logo />
+          <InputWithButton
+            buttonText={TEMP_BASE_CURRENCY}
+            onPress={this.onPressBaseCurrency}
+            defaultValue={TEMP_BASE_PRICE}
+            keyboardType="numeric"
+            onChangeText={this.changeTextCurrency} />
+          <InputWithButton
+            buttonText={TEMP_QUOTE_CURRENCY}
+            onPress={this.onPressQuoteCurrency}
+            editable={false}
+            defaultValue={TEMP_QUOTE_PRICE} />
+          <LastConverted
+            base={TEMP_BASE_CURRENCY}
+            quote={TEMP_QUOTE_CURRENCY}
+            date={TEMP_CONVERTION_DATE}
+            convertionRate={TEMP_CONVERTION_RATE} />
+          <TransparentButton
+            onPress={this.swapReverseCurrency}
+            text="Reverse Currencies" />
+        </KeyboardAvoidingView>
       </Container>
     )
   }
