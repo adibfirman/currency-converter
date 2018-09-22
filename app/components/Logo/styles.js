@@ -4,6 +4,7 @@ import { Dimensions } from 'react-native';
 const imgWidth = Dimensions.get('window').width / 2
 
 export default EStyleSheet.create({
+  $bottomLogo: 0,
   container: {
     alignItems: 'center'
   },
@@ -11,7 +12,8 @@ export default EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: imgWidth,
-    height: imgWidth
+    height: imgWidth,
+    bottom: '$bottomLogo'
   },
   imageChild: {
     width: imgWidth / 2
