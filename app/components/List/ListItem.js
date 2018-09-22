@@ -5,13 +5,12 @@ import PropTypes from 'prop-types'
 import Icon from './Icon'
 import styles from './styles';
 
-const ListItem = ({ text, onPress, selected = false }) => (
+const ListItem = ({ text, onPress, selected = false, customIcon = null }) => (
   <TouchableOpacity onPress={onPress}>
     <View style={styles.row}>
       <Text style={styles.text}>{text}</Text>
-      {
-        selected && <Icon />
-      }
+      { selected && <Icon /> }
+      { customIcon }
     </View>
   </TouchableOpacity>
 )
@@ -19,7 +18,8 @@ const ListItem = ({ text, onPress, selected = false }) => (
 ListItem.propTypes = {
   text: PropTypes.string,
   onPress: PropTypes.func,
-  selected: PropTypes.bool
+  selected: PropTypes.bool,
+  customIcon: PropTypes.element
 }
 
 export default ListItem
