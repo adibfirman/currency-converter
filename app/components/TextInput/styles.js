@@ -6,7 +6,7 @@ const BORDER_RADIUS = 5
 
 export default EStyleSheet.create({
   $btnBackgroundColorBase: '$white',
-  $btnBackgroundColorOpacity: 0.1,
+  $btnBackgroundColorOpacity: 3,
   container: {
     backgroundColor: '$white',
     width: '90%',
