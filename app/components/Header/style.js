@@ -2,6 +2,7 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 import { StatusBar } from 'react-native'
 
 export default EStyleSheet.create({
+  $iconColor: '$primaryBlue',
   container: {
     position: 'absolute',
     top: 0,

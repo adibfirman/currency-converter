@@ -18,11 +18,15 @@ const TEMP_CONVERTION_DATE = new Date()
 class Home extends Component {
 
   onPressBaseCurrency = () => {
-    console.log('onPressBaseCurrency')
+    this.goToCurrencyList('Base Currency')
   }
 
   onPressQuoteCurrency = () => {
-    console.log('onPressQuoteCurrency')
+    this.goToCurrencyList('Quote Currency')
+  }
+
+  goToCurrencyList (titleHeader = null) {
+    this.props.navigation.navigate('CurrencyList', { title: titleHeader })
   }
 
   changeTextCurrency = (text) => {

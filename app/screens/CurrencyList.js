@@ -12,9 +12,14 @@ class CurrenctList extends Component {
 
   renderListItem = ({ item }) => (
     <ListItem
+      onPress={this.handlePress}
       text={item}
       selected={item === this.state.selectedMoney} />
   )
+
+  handlePress = () => {
+    this.props.navigation.goBack()
+  }
   
   render () {
     const keyExtractorList = (item) => item
