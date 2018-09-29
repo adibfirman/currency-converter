@@ -38,7 +38,7 @@ class Home extends Component {
   }
 
   handlePressHeader = () => {
-    console.log('gear header pressed')
+    this.props.navigation.navigate('Options')
   }
 
   render () {

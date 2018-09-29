@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
-import { StatusBar, ScrollView } from 'react-native'
+import { StatusBar, ScrollView, Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import { ListItem, Seperator } from '../components/List'
+import { ConnectAlert } from '../components/Alert';
 
 const ICON_SIZE = 23
 const ICON_COLOR = '#868686'
 
 class Options extends Component {
+
+  handleThemesPress = () => {
+    this.props.navigation.navigate('Themes', { title: 'Themes Application' })
+  }
+
+  handleLinkExternal = () => {
+    Linking.openURL('httpsdasdas://fixer.io/')
+      .catch(err => {
+        this.props.alertWithType('error', err.code, 'The Url Has Been Destroy..!!')
+      })
+  }
 
   render () {
     return (
@@ -17,6 +29,7 @@ class Options extends Component {
           barStyle="default"
         />
         <ListItem
+          onPress={this.handleThemesPress}
           text="Themes"
           customIcon={
             <Icon
@@ -36,6 +49,7 @@ class Options extends Component {
               color={ICON_COLOR}
             />
           }
+          onPress={this.handleLinkExternal}
         />
         <Seperator />
       </ScrollView>
@@ -44,4 +58,4 @@ class Options extends Component {
 
 }
 
-export default Options
+export default ConnectAlert(Options)
