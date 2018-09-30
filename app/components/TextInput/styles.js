@@ -20,6 +20,8 @@ export default EStyleSheet.create({
     backgroundColor: '$lightGray'
   },
   btnContainer: {
+    flex: 1,
+    width: '10%',
     height: INPUT_HEIGHT,
     alignItems: 'center',
     justifyContent: 'center',
@@ -28,7 +30,6 @@ export default EStyleSheet.create({
     borderBottomLeftRadius: BORDER_RADIUS
   },
   btnText: {
-    paddingHorizontal: 10,
     fontWeight: '600',
     color: '$primaryBlue',
     fontSize: 20
@@ -42,7 +43,7 @@ export default EStyleSheet.create({
     height: INPUT_HEIGHT,
     flex: 1,
     fontSize: 16,
-    paddingHorizontal: 8,
+    paddingRight: 200,
     color: '$inputText'
   }
 })

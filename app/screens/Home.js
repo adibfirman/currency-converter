@@ -14,15 +14,21 @@ import { swapCurrency, changeCurrencyAmount } from '../actions/currencies';
 class Home extends Component {
 
   onPressBaseCurrency = () => {
-    this.goToCurrencyList('Base Currency')
+    this.goToCurrencyList({
+      title: 'Base Currency',
+      type: 'base'
+    })
   }
 
   onPressQuoteCurrency = () => {
-    this.goToCurrencyList('Quote Currency')
+    this.goToCurrencyList({
+      title: 'Quote Currency',
+      type: 'quote'
+    })
   }
 
-  goToCurrencyList (titleHeader = null) {
-    this.props.navigation.navigate('CurrencyList', { title: titleHeader })
+  goToCurrencyList (params) {
+    this.props.navigation.navigate('CurrencyList', { ...params })
   }
 
   changeTextCurrency = amount => {
@@ -39,7 +45,6 @@ class Home extends Component {
 
   render () {
     const { baseCurrency, quoteCurrency, amount, convertionRate, isFetching, lastConverted } = this.props
-    console.log(this.props)
     let quotePrice = '...'
 
     if (!isFetching) {
