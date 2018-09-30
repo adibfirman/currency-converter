@@ -14,7 +14,6 @@ export default EStyleSheet.create({
   },
   button: {
     alignSelf: 'flex-end',
-    paddingVertical: 9,
-    paddingHorizontal: 5
+    padding: 10
   }
 })

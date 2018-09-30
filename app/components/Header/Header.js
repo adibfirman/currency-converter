@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './style'
 
-const ICON_SIZE = 25
+const ICON_SIZE = 30
 
 const Header = ({ onPress }) => (
   <View style={styles.container}>
