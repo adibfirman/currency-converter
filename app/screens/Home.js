@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StatusBar, KeyboardAvoidingView } from 'react-native'
+import { connect } from 'react-redux';
 
 import { Container } from '../components/Container'
 import { Logo } from '../components/Logo'
@@ -7,6 +8,8 @@ import { InputWithButton } from '../components/TextInput'
 import { TransparentButton } from '../components/Buttons'
 import { LastConverted } from '../components/Text'
 import { Header } from '../components/Header'
+
+import { swapCurrency, changeCurrencyAmount } from '../actions/currencies';
 
 const TEMP_BASE_CURRENCY = 'USD'
 const TEMP_QUOTE_CURRENCY = 'GBP'
@@ -29,12 +32,14 @@ class Home extends Component {
     this.props.navigation.navigate('CurrencyList', { title: titleHeader })
   }
 
-  changeTextCurrency = (text) => {
-    console.log('change text', text)
+  changeTextCurrency = amount => {
+    // TODO: distpach this action to redux action
+    console.log(changeCurrencyAmount(amount))
   }
 
-  swapReverseCurrency = () => {
-    console.log('swapReverseCurrency')
+  handleSwapCurrency = () => {
+    // TODO: dispatch this action to redux
+    this.props.dispatch(swapCurrency())
   }
 
   handlePressHeader = () => {
@@ -67,7 +72,7 @@ class Home extends Component {
             date={TEMP_CONVERTION_DATE}
             convertionRate={TEMP_CONVERTION_RATE} />
           <TransparentButton
-            onPress={this.swapReverseCurrency}
+            onPress={this.handleSwapCurrency}
             text="Reverse Currencies" />
         </KeyboardAvoidingView>
       </Container>
@@ -76,4 +81,4 @@ class Home extends Component {
 
 }
 
-export default Home
+export default connect()(Home)
