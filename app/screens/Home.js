@@ -8,8 +8,7 @@ import { InputWithButton } from '../components/TextInput'
 import { TransparentButton } from '../components/Buttons'
 import { LastConverted } from '../components/Text'
 import { Header } from '../components/Header'
-
-import { swapCurrency, changeCurrencyAmount } from '../actions/currencies';
+import { swapCurrency, changeCurrencyAmount, getInitialConvertions } from '../actions/currencies';
 
 class Home extends Component {
 
@@ -41,6 +40,10 @@ class Home extends Component {
 
   handlePressHeader = () => {
     this.props.navigation.navigate('Options')
+  }
+
+  componentDidMount() {
+    this.props.dispatch(getInitialConvertions())
   }
 
   render () {

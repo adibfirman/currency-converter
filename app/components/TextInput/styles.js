@@ -42,8 +42,9 @@ export default EStyleSheet.create({
   input: {
     height: INPUT_HEIGHT,
     flex: 1,
-    fontSize: 16,
     paddingRight: 200,
+    paddingBottom: 5,
+    fontSize: 16,
     color: '$inputText'
   }
 })

@@ -15,7 +15,7 @@ class Options extends Component {
   }
 
   handleLinkExternal = () => {
-    Linking.openURL('httpsdasdas://fixer.io/')
+    Linking.openURL('https://exchangeratesapi.io/')
       .catch(err => {
         this.props.alertWithType('error', err.code, 'The Url Has Been Destroy..!!')
       })
@@ -41,7 +41,7 @@ class Options extends Component {
         />
         <Seperator />
         <ListItem
-          text="Fixer.io"
+          text="Exchangeratesapi.io"
           customIcon={
             <Icon
               name="md-link"
